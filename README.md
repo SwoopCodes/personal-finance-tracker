@@ -1,6 +1,15 @@
-# Finance Tracker
+# Personal Finance Tracker
 
 A personal finance and investment tracking web app. Track bank accounts and income/expense transactions with category breakdowns and balance history charts, alongside a stock portfolio tracker with live pricing (via `yfinance`), unrealized/realized P&L, and dividend tracking.
+
+<img width="1754" height="1228" alt="image" src="https://github.com/user-attachments/assets/557bf93e-09d1-4137-87e8-096bb2d55444" />
+
+<img width="2016" height="1228" alt="image" src="https://github.com/user-attachments/assets/4cd49d6a-9ee7-444f-8531-42b9b15cab1f" />
+
+<img width="2016" height="1228" alt="image" src="https://github.com/user-attachments/assets/a401406b-9b76-4dde-a0d5-ab052fc8b310" />
+
+<img width="2016" height="1228" alt="image" src="https://github.com/user-attachments/assets/72346eef-3693-4f78-b4b5-a67be5aeb87e" />
+
 
 Built as a Flask + PostgreSQL API (`backend/`) with a Create React App frontend (`frontend/`).
 
@@ -15,7 +24,7 @@ This is the recommended way to run the project — it builds the React frontend,
 A `.env` file must exist at the project root (`program/.env`) with a `SECRET_KEY`, used to sign session cookies:
 
 ```bash
-echo "SECRET_KEY=\"$(python3 -c 'import secrets; print(secrets.token_urlsafe(32))')\"" > .env
+python3 ./setup_env.py
 ```
 
 **2. Build and start everything**
