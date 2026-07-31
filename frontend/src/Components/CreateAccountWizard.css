@@ -1,0 +1,30 @@
+.account-wizard {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.account-wizard-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.account-wizard-step {
+  margin-top: 1.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.account-wizard .wizard-error {
+  color: var(--color-negative-strong);
+  background: var(--color-negative-subtle);
+  border: 1px solid var(--color-negative);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,139 @@
+/* Register.css */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
+
+.register-card {
+  background-color: var(--color-surface);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.register-input {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+.register-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 100%;
+}
+
+.btn-register-submit {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  margin-top: 0.5rem;
+}
+
+.btn-register-submit:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.02);
+}
+
+.btn-register-submit:active {
+  transform: scale(0.98);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-tertiary);
+}
+
+.login-link a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-message h2 {
+    color: var(--color-positive);
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    color: var(--color-text-tertiary);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.success-message .btn {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.success-message .btn:hover {
+    background-color: var(--color-accent-hover);
+}

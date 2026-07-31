@@ -1,0 +1,280 @@
+.stock-overview {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  background: var(--color-surface);
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stock-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+.stock-name-row h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+}
+.stock-ticker-badge {
+  background: var(--color-surface-alt-2);
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.stock-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.stock-price {
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.stock-day-change {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.stock-day-change.positive { color: var(--color-positive); }
+.stock-day-change.negative { color: var(--color-negative); }
+
+.stock-header-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-add-funds {
+  background: var(--color-positive);
+  color: var(--color-on-accent);
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(var(--color-positive-rgb), 0.25);
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-add-funds:hover {
+  background: var(--color-positive-strong);
+  transform: translateY(-1px);
+}
+
+.btn-sell {
+  background: var(--color-surface);
+  color: var(--color-accent-hover);
+  border: 1px solid var(--color-accent-border);
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-sell:hover {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-border-hover);
+}
+
+.btn-close-position {
+  background: var(--color-surface);
+  color: var(--color-negative);
+  border: 1px solid var(--color-negative-border);
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-close-position:hover {
+  background: var(--color-negative-subtle);
+  border-color: var(--color-negative-border-hover);
+}
+.btn-close-position:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.timeframe-selector {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.timeframe-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  min-width: 58px;
+  transition: all 0.15s;
+}
+.timeframe-btn:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--color-border-strong);
+}
+.timeframe-btn.active {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-border-hover);
+}
+
+.timeframe-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+.timeframe-change {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+.timeframe-change.positive { color: var(--color-positive); }
+.timeframe-change.negative { color: var(--color-negative); }
+
+.stock-chart-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.position-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface-alt-2) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.position-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.position-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+.position-stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.position-stat-value.positive { color: var(--color-positive); }
+.position-stat-value.negative { color: var(--color-negative); }
+
+.transaction-list {
+  margin-top: 1rem;
+}
+.transaction-list h4 {
+  margin-bottom: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.transactions-table th {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+.transactions-table td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--color-surface-alt-2);
+  color: var(--color-text-tertiary);
+}
+
+.txn-type-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.txn-type-badge.positive {
+  background: rgba(var(--color-positive-rgb), 0.15);
+  color: var(--color-positive-strong);
+}
+.txn-type-badge.negative {
+  background: rgba(var(--color-negative-rgb), 0.15);
+  color: var(--color-negative-strong);
+}
+
+.error-message {
+  color: var(--color-negative);
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .stock-overview {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .transactions-table thead {
+    display: none;
+  }
+  .transactions-table,
+  .transactions-table tbody,
+  .transactions-table tr,
+  .transactions-table td {
+    display: block;
+    width: 100%;
+  }
+  .transactions-table tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+  }
+  .transactions-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    padding: 0.35rem 0;
+    text-align: right;
+  }
+  .transactions-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-align: left;
+    margin-right: 1rem;
+  }
+}

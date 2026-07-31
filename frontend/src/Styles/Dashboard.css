@@ -1,0 +1,361 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: Arial, sans-serif;
+  padding: 2rem 1rem;
+}
+
+.dashboard-card {
+  background-color: var(--color-surface);
+  padding: 2rem 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+.dashboard-title {
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-theme-toggle {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-theme-toggle:hover {
+  background: var(--color-surface-alt-2);
+  transform: scale(1.05);
+}
+
+.btn-logout {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: var(--color-negative);
+  color: var(--color-on-accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  width: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background-color: var(--color-negative-strong);
+  transform: scale(1.02);
+}
+
+.btn-logout:active {
+  transform: scale(0.98);
+}
+
+/* Summary Cards */
+.summary-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-card {
+  background-color: var(--color-surface-alt);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summary-value.positive {
+  color: var(--color-positive);
+}
+
+.summary-value.negative {
+  color: var(--color-negative);
+}
+
+/* Grid for chart cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Triangle layout: Net Worth tile centered above the Finance/Investment row */
+.dashboard-triangle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.networth-tile-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+
+.dashboard-triangle .dashboard-grid {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.chart-card.networth-card {
+  padding: 1rem 0.85rem;
+}
+
+.chart-card.networth-card .chart-title {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.chart-card.networth-card .summary-value {
+  font-size: 1.15rem;
+}
+
+.chart-card.networth-card .overview-sparkline {
+  min-height: 70px;
+}
+
+.chart-card {
+  background-color: var(--color-surface-alt);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.chart-title {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.chart-placeholder {
+  background-color: var(--color-surface-alt-2);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.placeholder-text {
+  color: var(--color-text-faint);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Finance Overview mini stats + sparkline */
+.overview-mini-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0 0.25rem;
+}
+
+.mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.mini-stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.15rem;
+  white-space: nowrap;
+}
+
+.mini-stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.mini-stat-value.positive {
+  color: var(--color-positive);
+}
+
+.mini-stat-value.negative {
+  color: var(--color-negative);
+}
+
+.overview-sparkline {
+  min-height: 110px;
+  padding: 0.5rem;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Transactions Section */
+.transactions-section {
+  margin-top: 1rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.transactions-table-placeholder {
+  overflow-x: auto;
+  background-color: var(--color-surface-alt);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.transactions-table th {
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.transactions-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--color-surface-alt-2);
+  color: var(--color-text-tertiary);
+}
+
+.transactions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.transactions-table td:last-child {
+  font-weight: 600;
+}
+
+/* Clickable card */
+.chart-card.clickable {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chart-card.clickable:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Summary card inside chart-card (reuse style) */
+.chart-card .summary-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.8rem 0.5rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.chart-card .summary-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+}
+
+.chart-card .summary-value {
+  font-size: clamp(1.15rem, 4.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.chart-card .summary-value.positive {
+  color: var(--color-positive);
+}
+
+.chart-card .summary-value.negative {
+  color: var(--color-negative);
+}
+
+/* Expanded content (hidden by default, shown when expanded) */
+.expanded-content {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  border: 1px dashed var(--color-accent);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.expanded-content p {
+  margin: 0.5rem 0;
+}
