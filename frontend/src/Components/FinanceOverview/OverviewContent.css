@@ -1,0 +1,306 @@
+.overview-content {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  background: var(--color-surface);
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.overview-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--color-text-secondary);
+}
+.btn-add-transaction {
+  background: var(--color-positive);
+  color: var(--color-on-accent);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(var(--color-positive-rgb), 0.25);
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-add-transaction:hover {
+  background: var(--color-positive-strong);
+  transform: translateY(-1px);
+}
+
+.summary-stats {
+  display: flex;
+  gap: 2rem;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.stat-value.positive { color: var(--color-positive); }
+.stat-value.negative { color: var(--color-negative); }
+
+.transaction-list {
+  margin-top: 2rem;
+}
+.transaction-list h4 {
+  margin-bottom: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.overview-content .transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.overview-content .transactions-table th {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+.overview-content .transactions-table td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--color-surface-alt-2);
+  color: var(--color-text-tertiary);
+}
+.overview-content .transactions-table td.positive {
+  color: var(--color-positive);
+}
+.overview-content .transactions-table td.negative {
+  color: var(--color-negative);
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-delete-transaction {
+  background: none;
+  border: none;
+  color: var(--color-negative);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  line-height: 1;
+}
+.btn-delete-transaction:hover {
+  color: var(--color-negative-strong);
+  transform: scale(1.2);
+}
+
+/* Balance and chart controls */
+.balance-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--color-surface-alt) 0%, var(--color-surface-alt-2) 100%);
+  padding: 1.25rem 1.75rem;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.balance-display {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--color-border);
+  margin-right: 1.5rem;
+}
+.balance-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+.balance-value {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.dropdown-toggle:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--color-border-strong);
+}
+
+.dropdown-arrow {
+  margin-left: 0.5rem;
+  font-size: 0.65rem;
+  color: var(--color-text-faint);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  margin-top: 6px;
+  min-width: 160px;
+  z-index: 10;
+  overflow: hidden;
+  animation: dropdownIn 0.12s ease-out;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.55rem 1.2rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  transition: background 0.15s;
+}
+.dropdown-item:hover {
+  background: var(--color-surface-alt);
+}
+.dropdown-item.active {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-hover);
+  font-weight: 600;
+}
+
+.btn-toggle-chart {
+  background: var(--color-surface);
+  color: var(--color-accent-hover);
+  border: 1px solid var(--color-accent-border);
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-toggle-chart:hover {
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent-border-hover);
+}
+
+.chart-container {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.error-message {
+  color: var(--color-negative);
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .overview-content {
+    padding: 1rem 1.25rem;
+  }
+  .balance-summary {
+    flex-wrap: wrap;
+    padding: 1.1rem 1.25rem;
+  }
+  .balance-display {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+  .summary-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .overview-content .transactions-table thead {
+    display: none;
+  }
+  .overview-content .transactions-table,
+  .overview-content .transactions-table tbody,
+  .overview-content .transactions-table tr,
+  .overview-content .transactions-table td {
+    display: block;
+    width: 100%;
+  }
+  .overview-content .transactions-table tr {
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+  }
+  .overview-content .transactions-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    padding: 0.35rem 0;
+    text-align: right;
+  }
+  .overview-content .transactions-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-align: left;
+    margin-right: 1rem;
+  }
+}
