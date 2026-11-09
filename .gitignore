@@ -1,0 +1,19 @@
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node / frontend build
+node_modules/
+frontend/build/
+
+# OS / editor
+.DS_Store
+.directory

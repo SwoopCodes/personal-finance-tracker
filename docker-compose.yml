@@ -4,7 +4,7 @@ services:
     image: postgres:13-alpine
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in your .env file}
       POSTGRES_DB: finance_program
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -23,7 +23,7 @@ services:
       - DB_HOST=db     
       - DB_NAME=finance_program
       - DB_USER=postgres
-      - DB_PASSWORD=password
+      - DB_PASSWORD=${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in your .env file}
       - DB_PORT=5432
       - SECRET_KEY=${SECRET_KEY}
     volumes:

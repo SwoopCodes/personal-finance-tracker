@@ -47,12 +47,19 @@ def check_origin_for_state_changes():
         if not origin or not any(origin.startswith(allowed) for allowed in ALLOWED_ORIGINS):
             return jsonify({"error": "Forbidden"}), 403
 
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+if not DB_PASSWORD:
+    raise RuntimeError(
+        "DB_PASSWORD environment variable must be set (no insecure default is used)."
+    )
+
+
 def get_db():
     if 'db' not in g:
         g.db = psycopg2.connect(
             database=os.environ.get('DB_NAME', 'finance_program'),
             user=os.environ.get('DB_USER', 'postgres'),
-            password=os.environ.get('DB_PASSWORD', 'password'),
+            password=DB_PASSWORD,
             host=os.environ.get('DB_HOST', 'localhost'),
             port=os.environ.get('DB_PORT', '5432')
         )
